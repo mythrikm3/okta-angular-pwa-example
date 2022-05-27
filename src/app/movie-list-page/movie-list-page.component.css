@@ -1,0 +1,37 @@
+.card-box {
+    border: 1px solid rgb(248, 246, 246);
+    padding: 5px;
+    box-shadow: 0px 0px 10px 0px #f3f0f0;
+    margin-bottom: 20px;
+    float: left;
+    border-radius: 10px;
+}
+.card-box .card-thumbnail {
+    max-height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: 1s;
+}
+.card-box .card-thumbnail:hover {
+    transform: scale(1.05);
+}
+.card-box h3 {
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.card-box p {
+    font-size: 13px;
+}
+
+.scrolling-wrapper-flexbox {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.card {
+    flex: 0 0 auto;
+    margin-right: 10px;
+    border: none;
+}

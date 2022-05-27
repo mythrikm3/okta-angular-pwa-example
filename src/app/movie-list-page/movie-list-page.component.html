@@ -1,0 +1,46 @@
+<div class="jumbotron">
+    <h1>Welcome.</h1>
+    <h2>Millions of movies, TV shows and people to discover. Explore now.</h2>
+</div>
+
+<h3>What's Popular</h3>
+<div class="scrolling-wrapper-flexbox">
+    <div class="card" style="width: 250px;" *ngFor="let movie of popularMovies">
+        <!-- Bootstrap 5 card box -->
+        <div class="card-box" [routerLink]="['/movie/'+movie.id]" routerLinkActive="active">
+            <div class="card-thumbnail">
+                <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="img-fluid" alt="">
+            </div>
+            <h3 class="mt-2 text-primary">{{ movie.title }}</h3>
+            <p class="mt-1 text-secondary">{{ movie.release_date }}</p>
+        </div>
+    </div>
+</div>
+
+<h3 class="mt-10">Now Playing</h3>
+<div class="scrolling-wrapper-flexbox">
+    <div class="card" style="width: 250px;" *ngFor="let movie of nowPlayingMovies">
+        <!-- Bootstrap 5 card box -->
+        <div class="card-box" [routerLink]="['/movie/'+movie.id]" routerLinkActive="active">
+            <div class="card-thumbnail">
+                <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="img-fluid" alt="">
+            </div>
+            <h3 class="mt-2 text-primary">{{ movie.title }}</h3>
+            <p class="mt-1 text-secondary">{{ movie.release_date }}</p>
+        </div>
+    </div>
+</div>
+
+<h3 class="mt-10">Top Rated</h3>
+<div class="scrolling-wrapper-flexbox">
+    <div class="card" style="width: 250px;" *ngFor="let movie of topRatedMovies">
+        <!-- Bootstrap 5 card box -->
+        <div class="card-box" [routerLink]="['/movie/'+movie.id]" routerLinkActive="active">
+            <div class="card-thumbnail">
+                <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="img-fluid" alt="">
+            </div>
+            <h3 class="mt-2 text-primary">{{ movie.title }}</h3>
+            <p class="mt-1 text-secondary">{{ movie.release_date }}</p>
+        </div>
+    </div>
+</div>

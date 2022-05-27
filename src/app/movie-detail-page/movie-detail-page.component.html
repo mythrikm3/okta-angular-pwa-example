@@ -1,0 +1,39 @@
+<div class="row my-3">
+    <div class="col-auto">
+        <a [routerLink]="['/home']" routerLinkActive="active" style="margin-left: 1200px;" >Home</a>
+    </div>
+
+    <div class="col-auto">
+        <img src="../../assets/right-arrow.png" alt="">
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+        <div class="w-50 h-20 me-auto">
+            <img src="https://image.tmdb.org/t/p/w500{{selectedMovie.poster_path}}" height="500px" width="400px" style="margin-left:100px" class="img-fluid rounded" alt="">
+        </div>
+    </div>
+
+    <!-- right 8 grid colum -->
+
+    <div class="col-lg-8">
+        <div class="mt-5">
+            <h3 class="text-warning font-weight-bold">{{ selectedMovie.title }}</h3>
+            <div class="row mt-3 mb-3 w-auto">
+                <div class="col-auto">
+                    <p> {{ selectedMovie.release_date }} [ {{ selectedMovie.production_countries[0].iso_3166_1 }} ]</p>
+                </div>
+                <div class="col-auto">
+                    <span *ngFor="let genre of selectedMovie.genres let isLast=last">
+                        {{ genre.name }} {{isLast ? '' : ','}}
+                    </span>
+                </div>
+                <div class="col-auto">{{ getFormattedTime(selectedMovie.runtime) }}</div>
+            </div>
+            <div class="mb-3"><i>{{selectedMovie.tagline}}</i></div>
+            <h5>Overview</h5>
+            <p>{{selectedMovie.overview}}</p>
+        </div>
+    </div>
+</div>
+

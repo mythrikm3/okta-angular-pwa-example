@@ -17,16 +17,18 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HomeComponent } from './home/home.component';
-import { SearchComponent } from './search/search.component';
-import { DetailsComponent } from './details/details.component';
 import { OKTA_CONFIG, OktaAuthModule } from '@okta/okta-angular';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { CachingInterceptor } from './cache/caching-interceptor.service';
+import { MovieDetailPageComponent } from './movie-detail-page/movie-detail-page.component';
+import { MovieListPageComponent } from './movie-list-page/movie-list-page.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 const oktaConfig = {
-  issuer: 'https://{yourOktaDomain}/oauth2/default',
-  clientId: '{clientId}',
+  issuer: 'https://dev-4622995.okta.com/oauth2/default',
+  clientId: '0oa517d14bjV1rRJF5d7',
   redirectUri: window.location.origin + '/callback'
 };
 
@@ -34,8 +36,10 @@ const oktaConfig = {
   declarations: [
     AppComponent,
     HomeComponent,
-    SearchComponent,
-    DetailsComponent,
+    MovieDetailPageComponent,
+    MovieListPageComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

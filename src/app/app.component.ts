@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
 
   onSearch(): void {
     if (!this.searchForm.valid) { return; }
-    this.router.navigate(['search'], { queryParams: {query: this.searchForm.get('search').value}});
+    this.router.navigate(['home'], { queryParams: {query: this.searchForm.get('search').value}});
   }
 
   async login(): Promise<void> {
